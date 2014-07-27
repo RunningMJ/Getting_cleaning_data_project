@@ -8,17 +8,23 @@ markdownfile.rmd <- a markdown file exaplaining what was done
 tidy2.txt <- text file in tab form containing the final dataset organized by activity
 tidy2bysubject.txt <- text file in tab form containing the final final dataset organized by activity 
 
-Script does the following:  Takes a training and test dataset of accelerometer data and combines them into a tidy set with subject and activity columns.  Adds column names and then subsets the data to include only one value (the mean) for each subject and activity.  
+Script does the following:  
+* Downloads and unzips the files from sources, placing them in a ./data directory in your wd.
+* Takes a training and test dataset of accelerometer data and combines them into a tidy set with subject and activity columns.  
+* Adds column names
+* subsets the data to include only one value (the mean) for each subject and activity.  
 
 ###################
 Assignment Description from the website:
 
 You should create one R script called run_analysis.R that does the following. 
-1) Merges the training and the test sets to create one data set.
-2) Extracts only the measurements on the mean and standard deviation for each measurement. 
-3) Uses descriptive activity names to name the activities in the data set
-4) Appropriately labels the data set with descriptive variable names. 
-5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+*1 Merges the training and the test sets to create one data set.
+*2 Extracts only the measurements on the mean and standard deviation for each measurement. 
+*3 Uses descriptive activity names to name the activities in the data set
+*4 Appropriately labels the data set with descriptive variable names. 
+*5 Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+
+
 ####################
 
 The final file(s) have data that contains one row containing the mean value for each subject (30 subjects) and each activity (6 different possible), or 180 rows.  
