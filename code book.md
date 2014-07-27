@@ -9,6 +9,7 @@ You should create one R script called run_analysis.R that does the following.
 4) Appropriately labels the data set with descriptive variable names. 
 5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 ####################
+
 #Run_Analysis for Getting and Cleaning Data Project
 This is a markdown file with the variables, the data, and  transformations performed to clean up the data
 
@@ -27,7 +28,7 @@ This is a markdown file with the variables, the data, and  transformations perfo
 *feat - all features from the feature.txt file with activity and subject added
 
 ##Transformations of the data
-*import train/test data set, subjects, and activity codes
+*read in train/test data set, subjects, and activity codes
 *set new levels with names for the activity codes in the test/train act
 *combine test set data, testact, testsub to form the testset variable
 *combine train set data, trainact, trainsub to form the trainset variable

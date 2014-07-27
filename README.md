@@ -9,7 +9,8 @@ tidy2.txt <- text file in tab form containing the final dataset organized by act
 tidy2bysubject.txt <- text file in tab form containing the final final dataset organized by activity 
 
 Script does the following:  
-* Downloads and unzips the files from sources, placing them in a ./data directory in your wd.
+* "UCI HAR Dataset" folder MUST be in the working directory for the script to work
+* creates tables from all the necessary tables.  
 * Takes a training and test dataset of accelerometer data and combines them into a tidy set with subject and activity columns.  
 * Adds column names
 * subsets the data to include only one value (the mean) for each subject and activity.  
