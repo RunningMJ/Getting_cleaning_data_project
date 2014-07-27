@@ -3,19 +3,15 @@
 #see markdownfile and readme for more information on the original files and the transformations.
 
 #Create new directory for the data, download data, unzip data, and load data into two files
-if(!file.exists("./data")){dir.create("./data")}
-zipfile = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(zipfile,destfile="./data/project.zip",method="curl")
-unzip("./data/project.zip", exdir = "./data/project")
 
 #Read in the test and training data sets at numeric tables
-testset <- read.table("./data/UCI HAR Dataset/test/X_test.txt", colClasses = "numeric")
-trainset <- read.table("./data/UCI HAR Dataset/train/X_train.txt", colClasses = "numeric")
-testsub <- read.table("./data/UCI HAR Dataset/test/subject_test.txt", colClasses = "numeric")
-trainsub <- read.table("./data/UCI HAR Dataset/train/subject_train.txt", colClasses = "numeric")
+testset <- read.table("./UCI HAR Dataset/test/X_test.txt", colClasses = "numeric")
+trainset <- read.table("./UCI HAR Dataset/train/X_train.txt", colClasses = "numeric")
+testsub <- read.table("./UCI HAR Dataset/test/subject_test.txt", colClasses = "numeric")
+trainsub <- read.table("./UCI HAR Dataset/train/subject_train.txt", colClasses = "numeric")
 #Read in activity codes for each measure and convert from number to character
-testact <- read.table("./data/UCI HAR Dataset/test/Y_test.txt", colClasses = "factor")
-trainact <- read.table("./data/UCI HAR Dataset/train/Y_train.txt", colClasses = "factor")
+testact <- read.table("./UCI HAR Dataset/test/Y_test.txt", colClasses = "factor")
+trainact <- read.table("./UCI HAR Dataset/train/Y_train.txt", colClasses = "factor")
 levels(testact$V1) <-  c("WALKING",  "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING")
 levels(trainact$V1) <-  c("WALKING",  "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING")
 
@@ -27,7 +23,7 @@ allset <- rbind(trainset, testset)
 allset <- allset[order(allset$V1),]
 
 #Read in features for use as column names
-feat <- read.table("./data/UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
+feat <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
 feat <- feat[,2] #make a vector
 feat <- c("subject", "activity", feat) #add names for columns added to beginning of variable
 colnames(allset) <- feat #add column names to large data set
